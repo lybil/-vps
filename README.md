@@ -5,6 +5,11 @@ Vmess+websocket+TLS+Nginx+Website
 
 bash <(curl -L -s https://raw.githubusercontent.com/lybil/-vps/master/nginx%2Bv2ray) | tee v2ray_ins.log
 
+启动 V2ray：systemctl start v2ray
+
+启动 Nginx：systemctl start nginx
+
+
 
 wget -N --no-check-certificate
 
