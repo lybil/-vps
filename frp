@@ -4,7 +4,7 @@ wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v0
 # 解压
 tar -xzvf frp_0.20.0_linux_amd64.tar.gz
 # 文件夹名改成 frp，不然目录太长了不方便
-mv frp_0.18.0_linux_amd64 frp
+mv frp_0.20.0_linux_amd64 frp
 cd frp
 # 确保 frps 程序具有可执行权限
 chmod +x frps
