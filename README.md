@@ -8,6 +8,10 @@ chmod +x **.sh
 
 bash ***.sh
 
+sprov-ui
+
+wget -O /usr/bin/sprov-ui -N --no-check-certificate https://raw.githubusercontent.com/lybil/-vps/master/sprov-ui.sh&&chmod +x /usr/bin/sprov-ui&&bash sprov-ui
+
 开启ssh
 yum install -y openssl openssh-server
 
