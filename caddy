@@ -12,6 +12,8 @@ vim /etc/caddy/Caddyfile
 
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
 
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh && bash caddy_install.sh uninstall
+
 启动：/etc/init.d/caddy start
 停止：/etc/init.d/caddy stop
 重启：/etc/init.d/caddy restart
