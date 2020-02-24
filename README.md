@@ -10,7 +10,7 @@ bash ***.sh
 
 sprov-ui
 
-wget -O /usr/bin/sprov-ui -N --no-check-certificate https://raw.githubusercontent.com/lybil/-vps/master/sprov-ui.sh&&chmod +x /usr/bin/sprov-ui&&bash sprov-ui
+wget -N --no-check-certificate https://raw.githubusercontent.com/lybil/-vps/master/ssr.sh&&chmod +x ssr.sh&&bash ssr
 
 1.启动防火墙
 systemctl start firewalld 
