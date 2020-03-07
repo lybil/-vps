@@ -31,7 +31,8 @@ firewall-cmd --reload
 systemctl status firewalld或者 firewall-cmd --state
 
 firewall-cmd --zone=public --add-port=80/tcp  --permanent
-
+iptables -I INPUT -p tcp --dport 9000 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
 开启ssh
 yum install -y openssl openssh-server
 
