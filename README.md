@@ -8,9 +8,6 @@ chmod +x **.sh
 
 bash ***.sh
 
-sprov-ui
-
-wget -N --no-check-certificate https://raw.githubusercontent.com/lybil/-vps/master/ssr.sh&&chmod +x ssr.sh&&bash ssr.sh
 
 1.启动防火墙
 systemctl start firewalld 
@@ -33,18 +30,9 @@ systemctl status firewalld或者 firewall-cmd --state
 firewall-cmd --zone=public --add-port=80/tcp  --permanent
 iptables -I INPUT -p tcp --dport 9000 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
-开启ssh
-yum install -y openssl openssh-server
+ip route change $defrt via $(
 
-vim /etc/ssh/sshd_config
-
-22和rootlogin
-
-启动ssh服务
-systemctl start sshd.service
-
-重启网络
-service network restart
-
-设置开机启动ssh服务
-systemctl enable sshd.service
+ip route change default via $(ip route show|grep -m1 '^default'|awk '{print $3}') initcwnd 20 initrwnd 20
+net.ipv4.tcp_keepalive_time = 60
+net.ipv4.tcp_keepalive_probes = 3
+net.ipv4.tcp_keepalive_intvl = 30
