@@ -33,7 +33,11 @@ iptables-save > /etc/iptables.up.rules
 ip route change $defrt via $(
 
 ip route change default via $(ip route show|grep -m1 '^default'|awk '{print $3}') initcwnd 20 initrwnd 20
+
 net.ipv4.tcp_keepalive_time = 3600
+
 net.ipv4.tcp_keepalive_probes = 3
+
 net.ipv4.tcp_keepalive_intvl = 30
+
 net.ipv4.tcp_slow_start_after_idle = 0
