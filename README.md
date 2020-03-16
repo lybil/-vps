@@ -28,9 +28,10 @@ firewall-cmd --reload
 systemctl status firewalld或者 firewall-cmd --state
 
 firewall-cmd --zone=public --add-port=80/tcp  --permanent
+
 iptables -I INPUT -p tcp --dport 9000 -j ACCEPT
+
 iptables-save > /etc/iptables.up.rules
-ip route change $defrt via $(
 
 ip route change default via $(ip route show|grep -m1 '^default'|awk '{print $3}') initcwnd 20 initrwnd 20
 
